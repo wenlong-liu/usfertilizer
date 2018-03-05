@@ -1,0 +1,1787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>John W. Brakebill</origin>
+        <origin>Jo Ann M. Gronberg</origin>
+        <pubdate>2017</pubdate>
+        <title>County-Level Estimates of Nitrogen and Phosphorus from Commercial Fertilizer for the Conterminous United States, 1987-2012</title>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>Reston, Va.</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/F7H41PKX</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Gronberg, J.M. and Spahr, N.E., U.S. Geological Survey 2012</origin>
+            <pubdate>2012</pubdate>
+            <title>County-Level Estimates of Nitrogen and Phosphorus from Commercial Fertilizer for the Conterminous United States, 1987-2006</title>
+            <geoform>Tabular Data</geoform>
+            <serinfo>
+              <sername>U.S. Geological Survey Scientific Investigations Report</sername>
+              <issue>2012-5207</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>Reston, VA</pubplace>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <onlink>http://pubs.usgs.gov/sir/2012/5207/</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data set contains county-level estimates of nitrogen and phosphorus from fertilizer, for both farm and nonfarm uses, for the conterminous United States, for 1987 through 2012. State-level farm and nonfarm nitrogen and phosphorus were derived from the Association of American Plant Food Control Officials (AAPFCO) commercial fertilizer sales data. State estimates were then allocated to the county-level using fertilizer expenditure from the Census of Agriculture as county weights for farm fertilizer, and effective population density as county weights for nonfarm fertilizer. Data computations for 2007 - 2012 estimates are results of methods applied directly from Gronberg and Spahr, 2012. Data for 1987 - 2006 are exactly those published in Gronberg and Spahr, 2012.</abstract>
+      <purpose>The U.S. Geological Survey, National Water-Quality Assessment project requires nutrient input for analysis of the national and regional assessment of water quality. Detailed information on nutrient inputs to the environment is needed to understand and address the many serious problems that arise from excess nutrients in the streams and groundwater of the Nation. This data set provides estimates of nonpoint nitrogen and phosphorus associated with commercial fertilizer for the conterminous United States for 1987 through 2012. It is intended for regional and national scale applications.</purpose>
+      <supplinf>The data is provided as a comma delimited table for nitrogen and phosphorus. Data from 1987 - 2006 are exactly what is presented in Gronberg and Spahr,2012. 
+ 
+Limitations:
+
+Census of Agriculture data sets
+Data are included for any county from which $1000 or more of agricultural products are reported sold, or normally would have been sold during the census year. However, data for some counties are not included because Census non-disclosure rules prohibit disclosing information for an individual farm. In some cases, farm fertilizer expenditure data is not reported for a specific county. In these cases, the resulting farm fertilizer use estimate is blank. 
+ 
+Fertilizer expenditure is derived from the following Census of Agriculture items (definitions are in parentheses). 
+1987 and 1992: Commercial fertilizer (The expense for commercial fertilizer is the amount spent on fertilizer including the cost of custom application.)
+1997: Commercial fertilizer (The expense for commercial fertilizer is the amount spent on all forms of fertilizer including rock phosphate and gypsum. It also includes the cost of custom application.)
+2002 - 2012: Fertilizer, lime, and soil conditioners (The expense for fertilizer is the amount spent on all forms of fertilizer and lime including rock phosphate and gypsum during 2002. It also includes the cost of custom application. In the 1997 census, lime expenses were collected and published in the "all other" production expenses category.)
+
+Both the reporting of fertilizer sales and the collection of fertilizer expenditure information is inconsistent through time. 
+There are instances where county reporting stops completely, or where it was not reported, but then resumes. This can make county-level trend analysis challenging.
+ 
+AAPFCO data set
+Fertilizer sales reported in the AAPFCO data set in most cases are reported at the county level. However, for the data presented here, fertilizer sales are summarized to the state level, separated by reported farm and nonfarm uses, and aggregated back to the county level based on county farm expenditures reported in the Agricultural Census.
+If county farm fertilizer expenditures were not reported for a given county for a given year, the estimate of fertilizer use for that county is zero. 
+See Gronberg and Spahr, 2012 figure 2 for details of states used to derive national farm and nonfarm proportions (1987 - 2006). The following states were used to compute farm and nonfarm proportions for 2007 - 2012:  AR, CT, DE, IL, IN, KS, KY, LA, MD, MA, MI, MS, NE, NJ, OK, PA, RI, SC, SD, TN, UT, VT, VA, WA, WV, and WI. The original annual AAPFCO sales data is available for purchase by contacting: Joseph V. Slater E-Mail: slaterj@missouri.edu http://aapfco.org/publications.html.
+
+Several coding corrections were made to selected states regarding the identification of state farm or nonfarm use by product.
+Colorado 2007, 2008, 2010 switched all product use codes from 2 to 1, and from 1 to 2 (farm to nonfarm, and nonfarm to farm.
+Florida 2008, 2009, 2010, 2011, 2012 changed use codes 0, 3, 4, 5, and 6 to use 2, nonfarm.
+Mississippi 2008 switched use codes 2 to 1, and 1 to 2 (farm to nonfarm, and nonfarm to farm).
+New Mexico 2011 AND 2012 switched use codes 2 TO 1 (nonfarm to farm).
+
+Some specific fertilizers were identified as farm only.
+fertilizer product codes ('002','006','056','058','059','060','061') were set to farm use only.
+
+/* Farm only fertilizers
+002 - Anhy Ammonia
+006 - Aqua Ammonia
+056 - Nitrogen Sol LT 28%
+058 - Nitrogen Sol 28%
+059 - Nitrogen Sol 30%
+060 - Nitrogen Sol 32%
+061 - Nitrogen Sol GT  32%
+
+It was assumed that fertilizers lacking a use code (farm or nonfarm) were deemed a farm fertilizer (Gronberg and Spahr, 2012). Some counties have had minor boundary changes since 1985; these are believed to have minimal or no effect for the purpose of this dataset.
+Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government. Although this Federal Geographic Data Committee-compliant metadata file is intended to document the data set in nonproprietary form, as well as in ArcGIS format, this metadata file may include some ArcGIS-specific terminology.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1987</begdate>
+          <enddate>2012</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>date range of data</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>As needed</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-129.19921874485</westbc>
+        <eastbc>-65.917968747371</eastbc>
+        <northbc>51.944264877528</northbc>
+        <southbc>22.105998798912</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>inlandWaters</themekey>
+        <themekey>Fertilizer</themekey>
+        <themekey>Nitrogen</themekey>
+        <themekey>Phosphorus</themekey>
+        <themekey>Nutrient</themekey>
+        <themekey>Farm</themekey>
+        <themekey>nonFarm</themekey>
+        <themekey>Water Quality</themekey>
+        <themekey>Agricultural</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Conterminous United States</placekey>
+      </place>
+      <temporal>
+        <tempkt>None</tempkt>
+        <tempkey>1986-2012</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>This database, identified as CNTY_FERT_1987-2012, has been approved for release by the U.S. Geological Survey (USGS). Although this database has been subjected to rigorous review and is substantially complete, the USGS reserves the right to revise the data pursuant to further analysis and review. Furthermore, the database is released on condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from its authorized or unauthorized use.</accconst>
+    <useconst>Although these data have been used by the U.S. Geological Survey, U.S. Department of the Interior, no warranty expressed or implied is made by the U.S. Geological Survey as to the accuracy of the data and related materials. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the U.S. Geological Survey in the use of this data, software, or related materials. 
+ 
+Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>John Brakebill</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>USGS Maryland, Delaware, DC Water Science Center</address>
+          <city>Baltimore</city>
+          <state>MD</state>
+          <postal>21228</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>443-498-5500</cntvoice>
+        <cntemail>jwbrakeb@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Association of American Plant Food Control Officials (AAPFCO) for the fertilizer sales data; U.S. Department of Agriculture and U.S. Department of Commerce for fertilizer expenditure</datacred>
+    <native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcGIS 10.0.3.3600</native>
+    <crossref>
+      <citeinfo>
+        <origin>Gronberg, J.M.</origin>
+        <origin>Spahr, N.E.</origin>
+        <pubdate>20121119</pubdate>
+        <title>County-level estimates of nitrogen and phosphorus from commercial fertilizer for the Conterminous United States, 1987–2006</title>
+        <pubinfo>
+          <pubplace>Reston Va.</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://pubs.usgs.gov/sir/2012/5207/</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>None</attraccr>
+    </attracc>
+    <logic>None</logic>
+    <complete>Data set covers the conterminous United States for 1987 through 2012. See Supplemental_Information for more details. Not all counties have fertilizer sales data available for all years. Not all counties have fertilizer expenditure data for all years. In these cases, the county fertilizer estimate is blank.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Association of American Plant Food Control Officials</origin>
+            <pubdate>2017</pubdate>
+            <title>Commercial Fertilizer Sales data</title>
+            <geoform>Plain text</geoform>
+            <pubinfo>
+              <pubplace>Kentucky</pubplace>
+              <publish>Association of American Plant Food Control Officials, University of Kentucky</publish>
+            </pubinfo>
+            <othercit>Publication is variously dated; Joseph V. Slater E-Mail: slaterj@missouri.edu http://aapfco.org/publications.html</othercit>
+            <onlink>http://aapfco.org/publications.html</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Database for sale</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19870101</begdate>
+              <enddate>20121231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>Date range of data</srccurr>
+        </srctime>
+        <srccitea>AAPFCO Commercial Fertilizer</srccitea>
+        <srccontr>Commercial Fertilizer sales data, 1987-2012</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Ruddy, B.C., Lorenz, D.L., and Mueller, D.K., U.S. Geological Survey</origin>
+            <pubdate>2006</pubdate>
+            <title>County-Level Estimates of Nutrient Inputs to the Land Surface of the Conterminous United States, 1982-2001</title>
+            <geoform>report</geoform>
+            <serinfo>
+              <sername>U.S. Geological Survey, Scientific Investigations Report</sername>
+              <issue>2006-5012</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>Reston, VA</pubplace>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <othercit>Available on line at http://pubs.usgs.gov/sir/2006/5012/.</othercit>
+            <onlink>http://pubs.usgs.gov/sir/2006/5012/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>onLine</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19850101</begdate>
+              <enddate>20010101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>date range of data</srccurr>
+        </srctime>
+        <srccitea>Ruddy and others</srccitea>
+        <srccontr>Methodology for processing the fertilizer data</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Jo Ann M. Gronberg</origin>
+            <pubdate>2012</pubdate>
+            <title>30-Meter-Resolution Grid of 2001 Counties, Conterminous United States (co2001g)</title>
+            <geoform>raster digital data</geoform>
+            <pubinfo>
+              <pubplace>Reston, Va.</pubplace>
+              <publish>U. S. Geological Survey</publish>
+            </pubinfo>
+            <onlink>http://water.usgs.gov/lookup/getspatial?sir2012-5207_co2001g</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>onLine</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>20070101</begdate>
+              <enddate>20120101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>Ground condition.</srccurr>
+        </srctime>
+        <srccitea>co2001g</srccitea>
+        <srccontr>County areas (area2010) for 2007-2012 were derived from this data set of 2001 counties.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Census Bureau</origin>
+            <pubdate>2013</pubdate>
+            <title>County population, April 1, 2008 to July 1, 2012, Population Estimate Data Sets, Annual Estimates of the Resident Population:</title>
+            <geoform>plain text</geoform>
+            <pubinfo>
+              <pubplace>Washington D.C.</pubplace>
+              <publish>U.S. Census Bureau</publish>
+            </pubinfo>
+            <onlink>https://www.census.gov/programs-surveys/popest/data/tables.html</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>OnLine</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>20070101</begdate>
+              <enddate>20120101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>Ground Condition</srccurr>
+        </srctime>
+        <srccitea>population</srccitea>
+        <srccontr>population estimates for 2007 - 2012</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>A.L. LaMotte, U.S. Geological Survey</origin>
+            <pubdate>2015</pubdate>
+            <title>Selected items from the Census of Agriculture at the county level for the conterminous United States, 1950-2012</title>
+            <geoform>Tabular Data</geoform>
+            <pubinfo>
+              <pubplace>Reston, Va.</pubplace>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <onlink>https://www.sciencebase.gov/catalog/item/55db9455e4b0518e3547e5d6</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>20070101</begdate>
+              <enddate>20120101</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>date range of data</srccurr>
+        </srctime>
+        <srccitea>Census of Agriculture</srccitea>
+        <srccontr>Fertilizer expenditure for 2007 - 2012</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Gronberg, J.M.</origin>
+            <pubdate>20121119</pubdate>
+            <title>County-level estimates of nitrogen and phosphorus from commercial fertilizer for the Conterminous United States, 1987–2006</title>
+            <geoform>tabular</geoform>
+            <pubinfo>
+              <pubplace>Reston, Va.</pubplace>
+              <publish>U.S. geological Survey</publish>
+            </pubinfo>
+            <onlink>https://pubs.usgs.gov/sir/2012/5207/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19870101</begdate>
+              <enddate>20061231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>Ground condition</srccurr>
+        </srctime>
+        <srccitea>Methods</srccitea>
+        <srccontr>Methods for fertilizer processing, processed data 1987 - 2006.</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Census of Agriculture fertilizer expenditure for 2007 and 2012 were obtained from (A.L. LaMotte, USGS, 2015)</procdesc>
+        <procdate>2015</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Fertilizer expenditure data were interpolated as described in Gronberg and Spahr (2012).</procdesc>
+        <procdate>2015</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>2007 - 2012 commercial fertilizer sales data purchased from the American Plant Food Control Officials (AAPFCO), 2015.</procdesc>
+        <procdate>2013</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>State-level farm and nonfarm nitrogen and phosphorus calculated from fertilizer sales data using methods described in Gronberg and Spahr, 2012. State estimates allocated to the county-level using fertilizer expenditure as county weights for farm fertilizer, and population density as county weights for nonfarm fertilizer.  Procedural details can be found in Gronberg and Spahr (2012).
+
+A screening process was applied to the AAPFCO sales data to determine the quality of the state reporting in regards to farm and nonfarm use. The following states were selected to use for the computation of a national farm and nonfarm use by reported product for 2007 - 2012: AR, CT, DE, IL, IN, KS, KY, LA, MD, MA, MI, MS, NE, NJ, OK, PA, RI, SC, SD, TN, UT, VT, VA, WA, WV, and WI. National farm rates by product were computed based on the nutrient content of each fertilizer product reported using the states selected in the screening process, and applied to each product reported sold by state. County Agricultural Census farm fertilizer expenditure data were used to weight farm tons sold in each state to the county level. Effective population was computed to weight the nonfarm tons sold to urban areas within a county.</procdesc>
+        <procdate>2016</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <indspref>The data set is referenced by the Federal Information Processing Standards 2-digit code of the State or State equivalent (FIPS_st) combined with the 3-digit code of the county or county equivalent (FIPS_co). FIPS is a combination of state and county codes, in character format. Fipsno also is a combination, in integer format.</indspref>
+  </spdoinfo>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>CNTY_FERT_1987-2012.csv</enttypl>
+        <enttypd>comma delimited file, farm and nonfarm fertilizer estimates</enttypd>
+        <enttypds>U.S. Geological Survey, Plain text.</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>FIPS_st</attrlabl>
+        <attrdef>Federal Information Processing Standards (FIPS) 2-digit code of the State or State equivalent</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1-56</edomv>
+            <edomvd>FIPS State code</edomvd>
+            <edomvds>FIPS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Codes for the Identification of the States, the District of Columbia and the Outlying Areas of the United States, and Associated Areas; (Federal Information Processing Standard (FIPS) 5-2): Washington, DC, National Institute of Standards and Technology.</codesetn>
+            <codesets>U.S. Department of Commerce</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>FIPS_co</attrlabl>
+        <attrdef>Federal Information Processing Standards (FIPS) 3-digit code of the county or county equivalent in the designated state</attrdef>
+        <attrdefs>Federal Information Processing Standards</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1-840</edomv>
+            <edomvd>FIPS County code</edomvd>
+            <edomvds>FIPS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Counties and Equivalent Entities of the United States, Its Possessions, and Associated Areas; (Federal Information Processing Standard (FIPS) 6-4): Washington, DC, National Institute of Standards and Technology.</codesetn>
+            <codesets>U.S. Department of Commerce</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>FIPSno</attrlabl>
+        <attrdef>Federal Information Processing Standards (FIPS) 2-digit code of the state and 3 digit county or county equivalent in the designated state expressed as an integer</attrdef>
+        <attrdefs>Federal Information Processing Standards</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>State and Counties and Equivalent Entities of the United States, Its Possessions, and Associated Areas; (Federal Information Processing Standard (FIPS) 6-4): Washington, DC, National Institute of Standards and Technology.</codesetn>
+            <codesets>U.S. Department of Commerce</codesets>
+          </codesetd>
+        </attrdomv>
+        <attrdomv>
+          <codesetd>
+            <codesetn>State and Counties and Equivalent Entities of the United States, Its Possessions, and Associated Areas; (Federal Information Processing Standard (FIPS) 6-4): Washington, DC, National Institute of Standards and Technology.</codesetn>
+            <codesets>U.S. Department of Commerce</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>FIPS</attrlabl>
+        <attrdef>Federal Information Processing Standards (FIPS) 2-digit code of the state and 3 digit county or county equivalent in the designated state expressed as a character</attrdef>
+        <attrdefs>Federal Information Processing Standards</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>01001-56045</edomv>
+            <edomvd>FIPS State and County code</edomvd>
+            <edomvds>FIPS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <codesetd>
+            <codesetn>State and Counties and Equivalent Entities of the United States, Its Possessions, and Associated Areas; (Federal Information Processing Standard (FIPS) 6-4): Washington, DC, National Institute of Standards and Technology.</codesetn>
+            <codesets>U.S. Department of Commerce</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>State</attrlabl>
+        <attrdef>The Federal Information Processing Standards (FIPS) 2-character abbreviation for the name of the State or State equivalent in which the county is located</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>AL-WY</edomv>
+            <edomvd>FIPS State abbreviation</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Codes for the Identification of the States, the District of Columbia and the Outlying Areas of the United States, and Associated Areas; (Federal Information Processing Standard (FIPS) 5-2): Washington, DC, National Institute of Standards and Technology.</codesetn>
+            <codesets>U.S. Department of Commerce</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>County</attrlabl>
+        <attrdef>County name</attrdef>
+        <attrdefs>U.S. Geological Survey (USGS)</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>alphanumeric</edomv>
+            <edomvd>county name</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1987</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1987</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive number, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1987</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1987</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1988</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1988</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1988</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1988</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1989</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1989</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1989</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1989</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1990</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1990</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1990</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1990</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1991</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1991</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1991</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1991</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1992</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1992</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1992</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1992</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1993</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1993</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1993</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1993</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1994</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1994</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1994</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilogram, 1994</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1995</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1995</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1995</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1995</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1996</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1996</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1996</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1996</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1997</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1997</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1997</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1997</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1998</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1998</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1998</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1998</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN1999</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 1999</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN1999</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 1999</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2000</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2000</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2000</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2000</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2001</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2001</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2001</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2001</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2002</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2002</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2002</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2002</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2003</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2003</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2003</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2003</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2004</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2004</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2004</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2004</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2005</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms, 2005</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2005</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2005</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2006</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2006</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2006</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2006</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2007</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2007</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2007</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2007</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2008</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2008</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2008</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2008</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2009</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2009</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2009</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2009</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2010</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2010</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2010</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2010</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2011</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2011</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2011</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2011</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmN2012</attrlabl>
+        <attrdef>Nitrogen from farm fertilizer, in kilograms 2012</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, nodata = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfN2012</attrlabl>
+        <attrdef>Nitrogen from nonfarm fertilizer, in kilograms, 2012</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of nitrogen</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1987</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1987</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive number, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1987</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1987</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1988</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1988</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1988</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1988</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1989</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1989</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1989</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1989</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1990</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1990</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1990</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1990</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1991</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1991</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1991</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1991</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1992</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1992</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1992</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1992</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1993</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1993</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1993</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1993</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1994</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1994</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1994</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilogram, 1994</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1995</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1995</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1995</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1995</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1996</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1996</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1996</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1996</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1997</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1997</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1997</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1997</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1998</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1998</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1998</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1998</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP1999</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 1999</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP1999</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 1999</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2000</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2000</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2000</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2000</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2001</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2001</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2001</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2001</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2002</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2002</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2002</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2002</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2003</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2003</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2003</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2003</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2004</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2004</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2004</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2004</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2005</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms, 2005</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2005</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2005</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2006</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2006</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2006</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2006</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2007</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2007</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2007</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2007</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2008</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2008</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2008</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2008</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2009</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2009</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2009</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2009</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2010</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2010</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2010</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2010</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2011</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2011</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2011</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2011</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>farmP2012</attrlabl>
+        <attrdef>Phosphorus from farm fertilizer, in kilograms 2012</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nonfP2012</attrlabl>
+        <attrdef>Phosphorus from nonfarm fertilizer, in kilograms, 2012</attrdef>
+        <attrdefs>USGS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>positive numbers, no data = blank</edomv>
+            <edomvd>kilograms of phosphorus</edomvd>
+            <edomvds>USGS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>John Brakebill</cntper>
+          <cntorg>U.S. Geological Survey-Science Base</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>Colorado</state>
+          <postal>80225</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Although these data have been used by the U.S. Geological Survey, U.S. Department of the Interior, no warranty expressed or implied is made by the U.S. Geological Survey as to the accuracy of the data. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the U.S. Geological Survey in the use of these data, software, or related materials. The use of firm, trade, or brand names in this report is for identification purposes only and does not constitute endorsement by the U.S. Geological Survey. The names mentioned in this document may be trademarks or registered trademarks of their respective trademark owners.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Comma Separated Value</formname>
+          <formvern>.csv unknown version</formvern>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/F7H41PKX</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+    <techpreq>Original fertilizer sales data requires purchase. Not for distribution by third parties.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20170411</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>John Brakebill</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>5522 Research Park Drive</address>
+          <city>Baltimore</city>
+          <state>Maryland</state>
+          <postal>21228</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

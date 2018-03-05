@@ -1,0 +1,83 @@
+---
+title: "Data_processing"
+author: "Wenlong"
+date: "3/4/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## import libraries and data.
+
+```{r}
+require(tidyverse)
+
+# county level data of fertilizer application.  
+#Source: https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
+raw_data = read_csv("CNTY_FERT_1987-2012.csv")
+#summary(raw_data)
+
+# County summary from US census bureau.
+# Source: https://www.census.gov/geo/maps-data/data/gazetteer2010.html
+county_raw = read.table("Gaz_counties_national.txt", sep = "\t", header=TRUE)
+# remove duplicates in county data.
+county_data = county_raw %>%
+  distinct(GEOID, .keep_all = TRUE) %>%
+  # select certin columns.
+  select(GEOID, ALAND, AWATER,INTPTLAT, INTPTLONG) %>%
+  mutate(FIPSno = GEOID) %>%
+  select(-GEOID)
+
+# combine county data with county level fertilizer data.
+county_summary = left_join(raw_data,county_data, by = "FIPSno")
+```
+
+## Data cleanning
+
+```{r}
+clean_data = county_summary %>%
+  # remove some columns with FIPS numbers.
+  select(-c(FIPS_st, FIPS_co,FIPSno)) %>%
+  # wide to long dataset.
+  gather(Fert.Type, Quantity, farmN1987:nonfP2012) %>%
+  # separate the fert.type into three columns: farm type, fertilizer, year.
+  mutate(Year = str_sub(Fert.Type, start = -4), 
+         Fertilizer = str_sub(Fert.Type, start = -5, end = -5),
+         Farm.Type = str_sub(Fert.Type, start = 1, end = 4)
+         ) %>%
+  # repalce nonf into nonfarm
+  mutate(Farm.Type = ifelse(Farm.Type == "nonf", "nonfarm", "farm")) %>%
+  # remove Fert.Type
+  select(-Fert.Type)
+
+# save cleaned data into .rda format.
+
+save(clean_data, file = "../data/usfertilizer_county.rda")
+```
+
+## Data visualization
+
+```{r}
+# plot the top 10 nitrogen application in year 1990.
+# Reorder to make the plot more cleanner.
+clean_data %>%
+  filter(Fertilizer == "N" & Year == 1990) %>%
+  top_n(10, Quantity) %>%
+  ggplot(aes(x=reorder(County, Quantity), Quantity))+
+  geom_col()+
+  ggtitle("Top 10 counties with most N application in the year of 1990") + 
+  coord_flip()
+```
+
+```{r}
+# plot the P application for each county in the year of 2008.
+clean_data %>%
+  
+filter(State == "OH" & Fertilizer == "P" & Year == 2008) %>%
+ggplot()+
+  geom_point(aes(x=INTPTLONG, y = INTPTLAT, color = Quantity))+
+  coord_fixed(1.3)
+```
+

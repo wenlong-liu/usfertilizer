@@ -1,0 +1,21 @@
+---
+title: "Readme"
+author: "Wenlong"
+date: "3/4/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+# usfertilizer
+
+an R package for accessing and exploring the quantity of  county-level fertiliser in US
+
+badges:
+
+## Installation
+## Quick start
+## Roadmap
+## Problems and comments
