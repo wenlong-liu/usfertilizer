@@ -13,5 +13,6 @@ Description: This package, usfertilizer, is used to explore and visualize the
     user-friendly functitons to select the data of interest, summarize dataset 
     and gain insights.  Please note that USGS does not endorse this package.
 License: GNU 2.0 or newer
+Import: dplyr, ggplot2
 Encoding: UTF-8
 LazyData: true
