@@ -13,11 +13,16 @@
 #'@param end_year last year to show data, default: 2012.
 #'@param counties counties of interest, defalut: all avaible counties.
 #'@param states states of interest, defalt: all avaialble states.
-#'@param lat_max the maximum latitude of area of interest, default: .
-#'@param lat_min the minmum latitude of area of interest, default:
-#'@param long_max the maximum longitude of area of interest, default:
-#'@param long_min the minimum longitude of area of interest, default:
+#'@param lat_max the maximum latitude of area of interest.
+#'@param lat_min the minmum latitude of area of interest.
+#'@param long_max the maximum longitude of area of interest.
+#'@param long_min the minimum longitude of area of interest.
 #'@param FIPS FIPS numbers of interest, defalut: all the counties.
+#'@param overlap_state_county Logic. If true, the function will overlaping
+#'       the input of states and counties. If false, the function will return
+#'       results either in the states or in the counties.
+#'@param combine_state_county Logic. If true, the county will be changed into
+#'       county, state, e.g. Wake, NC; If false, no changes.
 #'
 #'@reference https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
 #'@keywrods datasets
@@ -39,7 +44,9 @@ get_data <- function( fert_type = NULL,
                         lat_min = NULL,
                         long_max = NULL,
                         long_min = NULL,
-                        FIPSs = NULL
+                        FIPSs = NULL,
+                        overlap_state_county = TRUE,
+                        combine_state_county = FALSE
                         )
 { if (is.null(fert_type)){
     fert_type = c("N","P")
@@ -48,7 +55,7 @@ get_data <- function( fert_type = NULL,
     lapply(tolower(fert_type),check_list,check_list_data = tolower(clean_data$Fertilizer),
            warning_content= "Fertilizer")
   }
-  output = filter(clean_data,Fertilizer %in% fert_type )
+  output = filter(clean_data,Fertilizer %in% toupper(fert_type) )
   # check years in the list or not.
   if(is.null(years)) {
     years = seq(1978,2012)
@@ -65,28 +72,54 @@ get_data <- function( fert_type = NULL,
     stop("Users can only use one of Counties and FIPSs parameters.",call. = FALSE)
   }
 
-  # check and return unavaialbe counties.
-  # only check the lowercase, in case some users input lower case of county names.
-  if(is.null(counties)){
-    counties = clean_data$County
-  }
-  else
-    {
-    lapply(tolower(counties),check_list,check_list_data = tolower(clean_data$County),
-           warning_content= "Counties")
-  }
-
-  # check and return unavaialbe counties.
-  if(is.null(states)){
-    states = clean_data$State
-  }
-
+  # check if the overlapping is true or not.
+  if (overlap_state_county){
+    # check the states and counties exist at the same time or not.
+    if(!is.null(counties) & !is.null(states)){
+      lapply(tolower(counties),check_list,check_list_data = tolower(clean_data$County),
+             warning_content= "Counties")
+      lapply(tolower(states),check_list,check_list_data = tolower(clean_data$State),
+             warning_content= "States")
+      output = filter(output, tolower(County) %in% tolower(counties) & tolower(State) %in% tolower(states) )
+    }
+    # check and return unavaialbe counties.
+    # only check the lowercase, in case some users input lower case of county names.
     else {
-    lapply(tolower(states),check_list,check_list_data = tolower(clean_data$State),
-           warning_content= "States")
-  }
+      if(is.null(counties) & !is.null(states)){
+        #counties = clean_data$County
+        lapply(tolower(states),check_list,check_list_data = tolower(clean_data$State),
+               warning_content= "States")
+        output = filter(output, tolower(State) %in% tolower(states))
+      }
+      else{
+        if(!is.null(counties) & is.null(states)){
+          lapply(tolower(counties),check_list,check_list_data = tolower(clean_data$County),
+                 warning_content= "Counties")
+          output = filter(output, tolower(County) %in% tolower(counties))
 
-  output = filter(output, County %in% counties | State %in% states )
+        }
+        else {
+          counties = clean_data$County
+          states = clean_data$State
+          output = filter(output, tolower(County) %in% tolower(counties) | tolower(State) %in% tolower(states) )
+        }
+      }
+    }
+    # check and return unavaialbe counties.
+  }
+  else{
+       if (!is.null(counties) & !is.null(states)) {
+         lapply(tolower(counties),check_list,check_list_data = tolower(clean_data$County),
+                warning_content= "Counties")
+         lapply(tolower(states),check_list,check_list_data = tolower(clean_data$State),
+                warning_content= "States")
+         output = filter(output, tolower(County) %in% tolower(counties) |
+                                 tolower(State) %in% tolower(states) )
+       }
+       else {
+         stop("If overlap_state_county is false, both counties and states need to be entered! ")
+       }
+  }
 
   if(!is.null(lat_max) & !is.null(lat_min)
      & !is.null(long_max) & !is.null(long_min)){
@@ -112,6 +145,14 @@ get_data <- function( fert_type = NULL,
   }
 
    output = filter(output, FIPS %in% FIPSs)
+
+   if (length(output$County) == 0 ){
+     warning("None data selected, refine your filters!")
+   }
+   else if (combine_state_county)
+     {
+     output$County = paste(output$County, ", ", output$State, sep = "")
+   }
    return(output)
 }
 
@@ -138,13 +179,9 @@ check_boundary <- function(input, check_value, expected_greater = TRUE, warning_
 #'
 
 check_list <- function(input, check_list_data, warning_content){
-  oldw = getOption("warn")
-  options(warn = -1)
-
   if(!is.element(input,check_list_data)){
     stop(paste(warning_content, input[!(input %in% check_list_data)], "are not available in the dataset.\n
                Please deleted them and try againt.\n"),call. = FALSE)
   }
-  options(warn = oldw)
 }
 
