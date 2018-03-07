@@ -1,2 +1,4 @@
 exportPattern("^[[:alpha:]]+")
+
 import(dplyr)
+import(ggplot2)
