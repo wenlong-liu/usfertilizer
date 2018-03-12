@@ -3,16 +3,22 @@ context("get_data")
 ###############
 # test the inputs of the function
 # produce some error data.
+year1_wrong = 128355
 year_error = c(1, 1973, 2019, 24556, -1, 50, 22222222222, -8882039 )
 county_error = c("aer", "wes","3w2")
 state_error = c("2w", "esa", 0)
 FIPS_error = c(10000000,332,-10,3)
 long_error = c(-000, 1332,35, 99, "abc")
 fert_error = c(1,"2,'S")
+
 # test year input.
+test_that("Check to make sure the error info is right.",
+          {expect_error(get_data(years = year1_wrong),"Years 128355 are not available in the dataset.\n\n               Please deleted them and try again.\n",
+                        fixed = TRUE)})
+
 for (year in year_error){
 test_that("If the years are out of limit, we can retrieve data from the dataset.",{
-  expect_that(get_data(years = year), throws_error())
+  expect_error(get_data(years = year))
 })
 }
 

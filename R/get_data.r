@@ -178,7 +178,7 @@ check_boundary <- function(input, check_value, expected_greater = TRUE, warning_
 check_list <- function(input, check_list_data, warning_content){
   if(!is.element(input,check_list_data)){
     stop(paste(warning_content, input[!(input %in% check_list_data)], "are not available in the dataset.\n
-               Please deleted them and try againt.\n"),call. = FALSE)
+               Please deleted them and try again.\n"),call. = FALSE)
   }
 }
 
