@@ -21,6 +21,9 @@
 #'       results either in the states or in the counties.
 #'@param combine_state_county Logic. If true, the county will be changed into
 #'       county, state, e.g. Wake, NC; If false, no changes.
+#'@param remove_data Logic.  If true, the data will be removed for this fentch
+#'       and load it again.  For the sake of internet speed, the author set it
+#'       true.  Users can set it false to keep it in the RAM.
 #'@return A tibble with tidy data.
 #'@export
 #'@keywords datasets tidydata
@@ -44,7 +47,8 @@ get_data <- function( fert_type = NULL,
                         long_min = NULL,
                         FIPSs = NULL,
                         overlap_state_county = TRUE,
-                        combine_state_county = FALSE
+                        combine_state_county = FALSE,
+                        remove_data = TRUE
                         )
 { if (is.null(fert_type)){
     fert_type = c("N","P")
@@ -164,6 +168,11 @@ get_data <- function( fert_type = NULL,
      output$County = paste(output$County, ", ", output$State, sep = "")
    }
    return(output)
+
+   # remove filtered data.
+   if(remove_data){
+     rm(list = ls(all.names = TRUE))
+   }
 }
 
 #' function to check the lat and long are within limits.

@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 .gitignore
 .travis.yml
+data-raw/
+Readme.md
+appveyor.yml
+readme.rmd

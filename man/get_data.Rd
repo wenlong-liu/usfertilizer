@@ -30,6 +30,10 @@ results either in the states or in the counties.}
 
 \item{combine_state_county}{Logic. If true, the county will be changed into
 county, state, e.g. Wake, NC; If false, no changes.}
+
+\item{remove_data}{Logic.  If true, the data will be removed for this fentch
+and load it again.  For the sake of internet speed, the author set it
+true.  Users can set it false to keep it in the RAM.}
 }
 \value{
 A tibble with tidy data.

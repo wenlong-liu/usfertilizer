@@ -15,7 +15,10 @@ Description: This package, usfertilizer, is used to explore and visualize the
 License: GPL
 Imports: ggplot2, dplyr
 Depends: R (>= 2.10)
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
 Encoding: UTF-8
-LazyData: false
+LazyData: true
 RoxygenNote: 6.0.1
+VignetteBuilder: knitr

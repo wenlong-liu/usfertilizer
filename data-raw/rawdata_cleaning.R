@@ -78,4 +78,6 @@ us_fertilizer_county = county_summary %>%
 
 # add data from 1945.
 us_fertilizer_county = rbind(us_fertilizer_county, cnty_summary_1985)
-devtools::use_data(us_fertilizer_county)
+devtools::use_data(us_fertilizer_county, compress = "xz")
+
+rm(list = ls(all=TRUE))
