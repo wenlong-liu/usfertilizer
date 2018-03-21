@@ -1,7 +1,7 @@
 Package: usfertilizer
 Type: Package
 Title: County-level estimates of fertilizer application in US 
-Version: 0.0.2
+Version: 0.0.3
 Author: Wenlong Liu
 Maintainer: Wenlong Liu <wliu14@ncsu.edu>
 Description: This package, usfertilizer, is used to explore and visualize the 

@@ -4,7 +4,7 @@ context("get_data")
 # test the inputs of the function
 # produce some error data.
 year1_wrong = 128355
-year_error = c(1, 1973, 2019, 24556, -1, 50, 22222222222, -8882039 )
+year_error = c(1, 1903, 2019, 24556, -1, 50, 22222222222, -8882039 )
 county_error = c("aer", "wes","3w2")
 state_error = c("2w", "esa", 0)
 FIPS_error = c(10000000,332,-10,3)
