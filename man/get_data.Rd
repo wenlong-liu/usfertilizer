@@ -6,6 +6,8 @@
 \arguments{
 \item{fert_type}{fertilizer type of interest, default: both Nitrogen and Phosphorus.}
 
+\item{farm_type}{where the fertilizer was applied. e.g. farm, nonfarm.}
+
 \item{years}{start year to show data, e.g. 1994, 2000:2005.}
 
 \item{counties}{counties of interest, defalut: all avaible counties.}

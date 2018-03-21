@@ -7,6 +7,7 @@
 #'  Further details are available via: https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
 #'
 #'@param fert_type fertilizer type of interest, default: both Nitrogen and Phosphorus.
+#'@param farm_type where the fertilizer was applied. e.g. farm, nonfarm.
 #'@param years start year to show data, e.g. 1994, 2000:2005.
 #'@param counties counties of interest, defalut: all avaible counties.
 #'@param states states of interest, defalt: all avaialble states.
@@ -33,6 +34,7 @@
 load("data/us_fertilizer_county.rda")
 
 get_data <- function( fert_type = NULL,
+                        farm_type = NULL,
                         years = NULL,
                         counties = NULL,
                         states = NULL,
@@ -52,9 +54,21 @@ get_data <- function( fert_type = NULL,
            warning_content= "Fertilizer")
   }
   output = filter(us_fertilizer_county,Fertilizer %in% toupper(fert_type) )
+
+  # check farm type.
+  if (is.null(farm_type)){
+    farm_type = c("farm","nonfarm")
+  }
+  else{
+    lapply(tolower(farm_type),check_list,check_list_data = tolower(us_fertilizer_county$Farm.Type),
+           warning_content= "Farm.Type")
+  }
+
+  output = filter(output, Farm.Type %in% tolower(farm_type) )
+
   # check years in the list or not.
   if(is.null(years)) {
-    years = seq(1978,2012)
+    years = seq(1945,2012)
   }
   else
     {
