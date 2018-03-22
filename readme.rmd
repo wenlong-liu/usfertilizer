@@ -65,6 +65,8 @@ us_fertilizer_county %>%
   scale_fill_gradient(low = "blue", high = "darkblue")+
   geom_col()+
   ggtitle(paste("Top 10 counties with most fertilizer application in the year of", year_plot)) + 
+  scale_y_continuous(name = "Nitrogen from commecial fertilization (kg)")+
+  scale_x_discrete(name = "Counties")+
   coord_flip()+
   theme_bw()
 ```
