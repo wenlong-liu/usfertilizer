@@ -1,10 +1,19 @@
-Introduction of usfertilizer, an R package
+usfertilizer, county-lelel nutrients data from 1945 to 2012
 ================
+
+![Travis-CI Build Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)\] [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer)
 
 Preface
 -------
 
-Nutrients as commercial fertilizer is an important input to soil water systems, especially in agricultural fields. It is critical to, at least roughly, estimate the quantity of fertilizer application in the watershed, to conduct further evaluation of water quality from certain watersheds. Since 1990, folks from United States Geological Service (USGS) have investigated considerable time, manpower and efforts to estimate the fertilizer application in county scales. Based on the sales data of commercial fertilizer, USGS researchers allocated the sold fertilizer to each county based on agricultural production, arable land, growing seasons, etc. Further details are available through coming tutorials and the cited websites. Although there is no perfect way to estimate the nutrient application in watershed, the datasets from USGS have been carefully reviewed and can serve as an indication of nutrients input from commercial fertilizer. In addition, please employ this datasets at watershed or regional scales. Note that mentioning USGS does not mean USGS endorse this package. \# Installment For now, you can install it via my Github Repsotory.
+Usfertilizer summarized the estimated county level data from USGS and provided a clean version using Tidyverse.
+
+Please note that USGS does not endorse this package and this package does not include manure data. Also data from 1986 is not available for now.
+
+Installment
+-----------
+
+For now, you can install it via my Github Repository.
 
 ``` r
 # install.package("devtools") # In case you have not installed it.
@@ -30,8 +39,8 @@ require(tidyverse)
 data("us_fertilizer_county")
 ```
 
-1.2 Summary of the dataset
---------------------------
+Summary of the dataset
+----------------------
 
 The dataset, named by us\_fertilizer\_county, contains 582012 observations and 11 variables. Details are available by using `?us_fertilizer_county`.
 

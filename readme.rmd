@@ -1,5 +1,5 @@
 ---
-title: "Introduction of usfertilizer, an R package"
+title: "usfertilizer, county-lelel nutrients data from 1945 to 2012"
 
 output: rmarkdown::github_document
 ---
@@ -11,8 +11,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+![Travis-CI Build Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer)
+
+
 ## Preface 
-Usfertilizer summarized the estimated county level data from USGS and provided a clean version using Tidyverse. Please note that USGS does not endorse this package and this package does not include manure data. Also data from 1986 is not available for now.
+Usfertilizer summarized the estimated county level data from USGS and provided a clean version using Tidyverse. 
+
+Please note that USGS does not endorse this package and this package does not include manure data. Also data from 1986 is not available for now.
 
 ## Installment
 For now, you can install it via my Github Repository.
@@ -37,7 +43,7 @@ require(tidyverse)
 data("us_fertilizer_county")
 ```
 
-## 1.2 Summary of the dataset
+## Summary of the dataset
 
 The dataset, named by us_fertilizer_county, contains `r length(us_fertilizer_county$FIPS)` observations and 11 variables.  Details are available by using `?us_fertilizer_county`.
 
