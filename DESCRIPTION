@@ -1,7 +1,7 @@
 Package: usfertilizer
 Type: Package
 Title: County-level estimates of fertilizer application in US 
-Version: 0.0.3
+Version: 0.1.0
 Author: Wenlong Liu
 Maintainer: Wenlong Liu <wliu14@ncsu.edu>
 Description: This package, usfertilizer, is used to explore and visualize the 
@@ -13,12 +13,12 @@ Description: This package, usfertilizer, is used to explore and visualize the
     user-friendly functitons to select the data of interest, summarize dataset 
     and gain insights.  Please note that USGS does not endorse this package.
 License: GPL
-Imports: ggplot2, dplyr
 Depends: R (>= 2.10)
-Suggests: testthat,
+Imports: tidyverse 
+Suggests: 
     knitr,
     rmarkdown
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr

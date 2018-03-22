@@ -4,7 +4,7 @@
 \name{us_fertilizer_county}
 \alias{us_fertilizer_county}
 \title{us_fertilizer_county}
-\format{A data frame with 323,544 rows and 11 variables:
+\format{A data frame with 582012rows and 11 variables:
 \describe{
   \item{FIPS}{FIPS is a combination of state and county codes, in character format.}
   \item{State}{The state abbr. of U.S.}
@@ -24,7 +24,7 @@ us_fertilizer_county
 }
 \description{
 This is data adapted from the county-level estimates of fertilizer nitrogen and phosphorus based on
-commacial sales from 1987 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
+commacial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
 for more details.
 }
 \keyword{datasets}
