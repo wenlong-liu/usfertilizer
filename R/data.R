@@ -19,4 +19,8 @@
 #'   \item{Farm.Type}{The land use type of fertilizer, e.g. farm and nonfarm}
 #'   ...
 #' }
+#' @examples
+#'   require(usfertilizer)
+#'   data(us_fertilizer_county)
+
 "us_fertilizer_county"

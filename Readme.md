@@ -10,8 +10,8 @@ Usfertilizer summarized the estimated county level data from USGS and provided a
 
 Please note that USGS does not endorse this package and this package does not include manure data. Also data from 1986 is not available for now.
 
-Installment
------------
+Installation
+------------
 
 For now, you can install it via my Github Repository.
 

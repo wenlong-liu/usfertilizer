@@ -27,4 +27,8 @@ This is data adapted from the county-level estimates of fertilizer nitrogen and 
 commacial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
 for more details.
 }
+\examples{
+  require(usfertilizer)
+  data(us_fertilizer_county)
+}
 \keyword{datasets}
