@@ -1,0 +1,148 @@
+---
+title: "Data sources and processing procedures"
+author: "Wenlong"
+date: "3/28/2018"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = TRUE)
+```
+## Introduction of data sources and availability
+The data used in this package were original compiled and processed by United States Geographic Services (USGS).  The fertilizer data include the application in both farms and non-farms for 1945 through 2012.  The folks in USGS utilized the sales data of commercial fertilizer each state or county from the Association of American Plant Food Control Officials (AAPFCO) commercial fertilizer sales data. State estimates were then allocated to the county-level using fertilizer expenditure from the Census of Agriculture as county weights for farm fertilizer, and effective population density as county weights for nonfarm fertilizer.  The data sources and other further information are availalbe in Table 1.
+
+|Dataset name                 | Temporal coverage| Source| Website  | Comments |
+|-------------------|:-------------:|:---------:| ---------|:--------------------|
+|Fertilizer data before 1985 | 1945 - 1985    | USGS     | [Link](https://pubs.er.usgs.gov/publication/ofr90130) |Only has farm data.|
+|Fertilizer data after 1986  | 1986 - 2012    | USGS     | [Link](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238) |Published in 2017.|
+|County background data      |  2010          | US Census| [Link](https://www.census.gov/geo/maps-data/data/gazetteer2010.html) |Assume descriptors of counties do not change.|
+
+
+## Data cleanning and processing
+
+As the county-level fertilizer data were processed at different times and by different researchers, the format of the data are a little bit messy.  For the sake of time and efforts to employ a complicated dataset, the author cleaned the data into a __Tidy Data__ following these rules from [Hadley Wickham](http://r4ds.had.co.nz/tidy-data.html):
+
+* 1. Each variable must have its own column.
+* 2. Each observation must have its own row.
+* 3. Each value must have its own cell.
+
+Fig. 1 shows the rules visually.  
+
+![](http://r4ds.had.co.nz/images/tidy-1.png)
+Fig. 1 Following three rules makes a dataset tidy: variables are in columns, observations are in rows, and values are in cells.
+
+(The description of tidy data was adapted from [_R for data science_](http://r4ds.had.co.nz/))
+
+
+### import libraries and data.
+
+```{r}
+require(tidyverse)
+# county level data of fertilizer application.  
+#Source: https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
+raw_data = read_csv("../data-raw/CNTY_FERT_1987-2012.csv")
+#summary(raw_data)
+
+# County summary from US census bureau.
+# Source: https://www.census.gov/geo/maps-data/data/gazetteer2010.html
+county_raw = read.table("../data-raw/Gaz_counties_national.txt", sep = "\t", header=TRUE)
+
+# read in data, extracted from coverage in ArcGIS.
+n45_64 <- read.table("../data-raw/cty_fert0.n45-64.txt", sep = ",", header = T)
+n65_85 <- read.table("../data-raw/cty_fert0.n65-85.txt", sep = ",", header = T)
+p45_64 <- read.table("../data-raw/cty_fert0.p45-64.txt", sep = ",", header = T)
+p65_85 <- read.table("../data-raw/cty_fert0.p65-85.txt", sep = ",", header = T)
+# merge nitrogen and P data together.
+n45_85 = inner_join(n45_64, n65_85, by = c("FIPS","STATE","Rowid_"))
+p45_85 = inner_join(p45_64, p65_85, by = c("FIPS","STATE","Rowid_"))
+
+```
+
+## Data cleanning
+
+### clean data before 1982.
+
+```{r}
+# clean nitroge and phosphorus data.
+nitrogen_1985 = n45_85 %>% 
+  select(-Rowid_) %>%  # remove irrelavent info.
+  # add leading zeros for FIPS to make it 5 digits.
+  mutate(FIPS = str_pad(FIPS, 5, pad = "0")) %>% 
+  gather(Year_temp, Quantity, Y45:Y85) %>% 
+  mutate(Fertilizer = rep("N", length(.$Quantity)),
+         Farm.Type = rep("farm", length(.$Quantity)),
+         Year = paste("19",str_sub(Year_temp, start = 2),sep = "")
+         ) %>% 
+  select(-Year_temp)
+
+phosphorus_1985 = p45_85 %>% 
+  select(-Rowid_) %>%  # remove irrelavent info.
+  mutate(FIPS = str_pad(FIPS, 5, pad = "0")) %>% 
+  gather(Year_temp, Quantity, Y45:Y85) %>% 
+  mutate(Fertilizer = rep("P", length(.$Quantity)),
+         Farm.Type = rep("farm", length(.$Quantity)),
+         Year = paste("19",str_sub(Year_temp, start = 2),sep = "")
+         ) %>% 
+  select(-Year_temp)
+# clean dataset for data before 1985
+clean_data_1985 = rbind(phosphorus_1985, nitrogen_1985)
+```
+
+### clean data after 1987
+
+```{r}
+# remove duplicates in county data.
+county_data = county_raw %>%
+  distinct(GEOID, .keep_all = TRUE) %>%
+  # select certin columns.
+  select(GEOID, ALAND, AWATER,INTPTLAT, INTPTLONG) %>%
+  mutate(FIPSno = GEOID) %>%
+  select(-GEOID)
+
+# combine county data with county level fertilizer data.
+county_summary = left_join(raw_data,county_data, by = "FIPSno")
+
+clean_data = county_summary %>%
+  # remove some columns with FIPS numbers.
+  select(-c(FIPS_st, FIPS_co,FIPSno)) %>%
+  # wide to long dataset.
+  gather(Fert.Type, Quantity, farmN1987:nonfP2012) %>%
+  # separate the fert.type into three columns: farm type, fertilizer, year.
+  mutate(Year = str_sub(Fert.Type, start = -4), 
+         Fertilizer = str_sub(Fert.Type, start = -5, end = -5),
+         Farm.Type = str_sub(Fert.Type, start = 1, end = 4)
+         ) %>%
+  # repalce nonf into nonfarm
+  mutate(Farm.Type = ifelse(Farm.Type == "nonf", "nonfarm", "farm")) %>%
+  # remove Fert.Type
+  select(-Fert.Type)
+
+# extract county summaries info from clean data.
+cnty_summary_1985 = county_summary %>% 
+  select(FIPS,State, County, ALAND, AWATER, INTPTLAT, INTPTLONG) %>% 
+  right_join(clean_data_1985, by = "FIPS") 
+
+# add data from 1945. 
+clean_data = rbind(clean_data, cnty_summary_1985)
+```
+
+### Save data as rdata with compaction
+
+```{r sava_data, eval=FALSE}
+# NOT RUN
+# save cleaned data into .rda format.
+save(clean_data, file = "../data/usfertilizer_county.rda")
+```
+
+## Future development plan
+
+There are some future features in the dataset, including:
+
+* Add missing data in the year of 1986.
+* Add manure data to complete the nutrient inputs.
+* Develop a package to retrieve, analyze and visualize the fertilizer data in watersheds.
+
