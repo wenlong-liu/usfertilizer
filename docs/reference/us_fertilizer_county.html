@@ -28,9 +28,11 @@
 <meta property="og:title" content="us_fertilizer_county — us_fertilizer_county" />
 
 <meta property="og:description" content="This is data adapted from the county-level estimates of fertilizer nitrogen and phosphorus based on
-commacial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
+commercial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
 for more details." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -38,6 +40,8 @@ for more details." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -53,8 +57,12 @@ for more details." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">usfertilizer</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">usfertilizer</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -74,9 +82,15 @@ for more details." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Introduction.html">Introduction of usfertilizer, an R package</a>
+      <a href="../articles/1_Introduction.html">Introduction of usfertilizer, an R package</a>
+    </li>
+    <li>
+      <a href="../articles/2_data_sources_and_cleaning.html">Data sources and processing procedures</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -88,6 +102,7 @@ for more details." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -95,7 +110,7 @@ for more details." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>us_fertilizer_county</h1>
@@ -104,7 +119,7 @@ for more details." />
 
     
     <p>This is data adapted from the county-level estimates of fertilizer nitrogen and phosphorus based on
-commacial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
+commercial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
 for more details.</p>
     
 
@@ -122,8 +137,9 @@ for more details.</p>
   <dt>INTPTLONG</dt><dd><p>The longitude of centriod in each county, e.g. -86.64449</p></dd>
   <dt>Quantity</dt><dd><p>The quantity of fertilizeation as N or P, e.g. kg N or kg P</p></dd>
   <dt>Year</dt><dd><p>The year of estimated data, e.g. 1994</p></dd>
-  <dt>Fertilizer</dt><dd><p>The fertilizer type, e.g. N or P</p></dd>
+  <dt>Nutrient</dt><dd><p>The fertilizer type, e.g. N or P</p></dd>
   <dt>Farm.Type</dt><dd><p>The land use type of fertilizer, e.g. farm and nonfarm</p></dd>
+  <dt>Input.Type</dt><dd><p>The input type of nutrient, e.g. Fertilizer or Manure</p></dd>
   ...
 </dl>
     
@@ -155,6 +171,8 @@ for more details.</p>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

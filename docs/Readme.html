@@ -26,6 +26,8 @@
 <script src="jquery.sticky-kit.min.js"></script>
 <script src="pkgdown.js"></script>
 <meta property="og:title" content="usfertilizer" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -33,6 +35,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -48,8 +52,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">usfertilizer</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">usfertilizer</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.4</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -69,9 +77,15 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/Introduction.html">Introduction of usfertilizer, an R package</a>
+      <a href="articles/1_Introduction.html">Introduction of usfertilizer, an R package</a>
+    </li>
+    <li>
+      <a href="articles/2_data_sources_and_cleaning.html">Data sources and processing procedures</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -83,6 +97,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -90,17 +105,17 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
       <h1>usfertilizer</h1>
     </div>
 
-
 <div id="usfertilizer" class="section level1">
 
-<!--[![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/usfertilizer)](https://CRAN.R-project.org/package=usfertilizer)-->
-<p><a href="(https://travis-ci.org/wenlong-liu/usfertilizer)"><img src="https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/wenlong-liu/usfertilizer"><img src="https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <!--[![metacran monthly downloads](http://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)--> <!--[![metacran downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)--></p>
+<!--[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)-->
+<p><a href="https://travis-ci.org/wenlong-liu/usfertilizer"><img src="https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/wenlong-liu/usfertilizer"><img src="https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <!--[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
+[![metacran downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)--></p>
 <div id="county-lelel-nutrients-data-from-1945-to-2012" class="section level2">
 <h2 class="hasAnchor">
 <a href="#county-lelel-nutrients-data-from-1945-to-2012" class="anchor"></a>County-lelel nutrients data from 1945 to 2012</h2>
@@ -112,28 +127,27 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Install the stable version via CRAN, just run:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"usfertilizer"</span>)</code></pre></div>
-<p>You can also install it via my Github Repository.</p>
+<p>You can also install the package via my Github Repository.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.package("devtools")   #In case you have not installed it.</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"wenlong-liu/usfertilizer"</span>)</code></pre></div>
 </div>
-</div>
-<div id="get-started" class="section level1">
-<h1 class="hasAnchor">
-<a href="#get-started" class="anchor"></a>Get started</h1>
-<div id="import-data-and-related-libraries" class="section level2">
+<div id="get-started" class="section level2">
 <h2 class="hasAnchor">
-<a href="#import-data-and-related-libraries" class="anchor"></a>Import data and related libraries</h2>
+<a href="#get-started" class="anchor"></a>Get started</h2>
+<div id="import-data-and-related-libraries" class="section level3">
+<h3 class="hasAnchor">
+<a href="#import-data-and-related-libraries" class="anchor"></a>Import data and related libraries</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(usfertilizer)
 <span class="kw">require</span>(tidyverse)
 <span class="kw">data</span>(<span class="st">"us_fertilizer_county"</span>)</code></pre></div>
 </div>
-<div id="summary-of-the-dataset" class="section level2">
-<h2 class="hasAnchor">
-<a href="#summary-of-the-dataset" class="anchor"></a>Summary of the dataset</h2>
-<p>The dataset, named by us_fertilizer_county, contains 582012 observations and 11 variables. Details are available by using <code><a href="reference/us_fertilizer_county.html">?us_fertilizer_county</a></code>.</p>
+<div id="summary-of-the-dataset" class="section level3">
+<h3 class="hasAnchor">
+<a href="#summary-of-the-dataset" class="anchor"></a>Summary of the dataset</h3>
+<p>The dataset, named by us_fertilizer_county, contains 625580 observations and 11 variables. Details are available by using <code><a href="reference/us_fertilizer_county.html">?us_fertilizer_county</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">glimpse</span>(us_fertilizer_county)
-<span class="co">#&gt; Observations: 582,012</span>
-<span class="co">#&gt; Variables: 11</span>
+<span class="co">#&gt; Observations: 625,580</span>
+<span class="co">#&gt; Variables: 12</span>
 <span class="co">#&gt; $ FIPS       &lt;chr&gt; "01001", "01003", "01005", "01007", "01009", "01011...</span>
 <span class="co">#&gt; $ State      &lt;chr&gt; "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL...</span>
 <span class="co">#&gt; $ County     &lt;chr&gt; "Autauga", "Baldwin", "Barbour", "Bibb", "Blount", ...</span>
@@ -143,21 +157,22 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="co">#&gt; $ INTPTLONG  &lt;dbl&gt; -86.64449, -87.74607, -85.40546, -87.12715, -86.567...</span>
 <span class="co">#&gt; $ Quantity   &lt;dbl&gt; 1580225, 6524369, 2412372, 304592, 1825118, 767573,...</span>
 <span class="co">#&gt; $ Year       &lt;chr&gt; "1987", "1987", "1987", "1987", "1987", "1987", "19...</span>
-<span class="co">#&gt; $ Fertilizer &lt;chr&gt; "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "...</span>
-<span class="co">#&gt; $ Farm.Type  &lt;chr&gt; "farm", "farm", "farm", "farm", "farm", "farm", "fa...</span></code></pre></div>
+<span class="co">#&gt; $ Nutrient   &lt;chr&gt; "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "...</span>
+<span class="co">#&gt; $ Farm.Type  &lt;chr&gt; "farm", "farm", "farm", "farm", "farm", "farm", "fa...</span>
+<span class="co">#&gt; $ Input.Type &lt;chr&gt; "Fertilizer", "Fertilizer", "Fertilizer", "Fertiliz...</span></code></pre></div>
 </div>
 </div>
-<div id="examples" class="section level1">
-<h1 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h1>
-<div id="example-1-find-out-the-top-10-counties-with-most-nitrogen-appliation-in-2008-" class="section level2">
+<div id="examples" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-1-find-out-the-top-10-counties-with-most-nitrogen-appliation-in-2008-" class="anchor"></a>Example 1: Find out the top 10 counties with most nitrogen appliation in 2008.</h2>
+<a href="#examples" class="anchor"></a>Examples</h2>
+<div id="example-1-find-out-the-top-10-counties-with-most-nitrogen-appliation-in-2008-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-1-find-out-the-top-10-counties-with-most-nitrogen-appliation-in-2008-" class="anchor"></a>Example 1: Find out the top 10 counties with most nitrogen appliation in 2008.</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot the top 10 nitrogen application in year 2008.</span>
 <span class="co"># Reorder to make the plot more cleanner.</span>
 year_plot =<span class="st"> </span><span class="dv">2008</span>
 us_fertilizer_county <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Fertilizer <span class="op">==</span><span class="st"> "N"</span> <span class="op">&amp;</span><span class="st"> </span>Year <span class="op">==</span><span class="st"> </span>year_plot) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(Nutrient <span class="op">==</span><span class="st"> "N"</span> <span class="op">&amp;</span><span class="st"> </span>Year <span class="op">==</span><span class="st"> </span>year_plot <span class="op">&amp;</span><span class="st"> </span>Input.Type <span class="op">==</span><span class="st"> "Fertilizer"</span> ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">top_n</span>(<span class="dv">10</span>, Quantity) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">reorder</span>(<span class="kw">paste</span>(County,State, <span class="dt">sep =</span> <span class="st">","</span>), Quantity), Quantity, <span class="dt">fill =</span> Quantity))<span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span> <span class="st">"blue"</span>, <span class="dt">high =</span> <span class="st">"darkblue"</span>)<span class="op">+</span>
@@ -169,14 +184,14 @@ us_fertilizer_county <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="readme_files/figure-markdown_github/unnamed-chunk-5-1.png"></p>
 </div>
-<div id="example-2-find-out-the-top-10-states-with-most-nitrogen-appliation-in-1980-" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example-2-find-out-the-top-10-states-with-most-nitrogen-appliation-in-1980-" class="anchor"></a>Example 2: Find out the top 10 states with most nitrogen appliation in 1980.</h2>
+<div id="example-2-find-out-the-top-10-states-with-most-nitrogen-appliation-in-1980-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-2-find-out-the-top-10-states-with-most-nitrogen-appliation-in-1980-" class="anchor"></a>Example 2: Find out the top 10 states with most nitrogen appliation in 1980.</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plot the top 10 states with P application in year 1980.</span>
 <span class="co"># Reorder to make the plot more cleanner.</span>
 year_plot =<span class="st"> </span><span class="dv">1980</span>
 us_fertilizer_county <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Fertilizer <span class="op">==</span><span class="st"> "P"</span> <span class="op">&amp;</span><span class="st"> </span>Year <span class="op">==</span><span class="st"> </span><span class="dv">1980</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(Nutrient <span class="op">==</span><span class="st"> "P"</span> <span class="op">&amp;</span><span class="st"> </span>Year <span class="op">==</span><span class="st"> </span><span class="dv">1980</span> <span class="op">&amp;</span><span class="st"> </span>Input.Type <span class="op">==</span><span class="st"> "Fertilizer"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">group_by</span>(State) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">summarise</span>(<span class="dt">p_application =</span> <span class="kw">sum</span>(Quantity)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span>
@@ -185,45 +200,68 @@ us_fertilizer_county <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span> <span class="st">"blue"</span>, <span class="dt">high =</span> <span class="st">"darkblue"</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">paste</span>(<span class="st">"Top 10 States with most Phosphrus application in the year of"</span>, year_plot)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">"Phosphrus from commecial fertilization (kg)"</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">"Phosphrus from commecial fertilizer (kg)"</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">"States"</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
 <p><img src="readme_files/figure-markdown_github/unnamed-chunk-6-1.png"></p>
 </div>
-<div id="example-3-plot-the-n-and-p-input-into-farms-for-nc-and-sc-from-1945-to-2010" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example-3-plot-the-n-and-p-input-into-farms-for-nc-and-sc-from-1945-to-2010" class="anchor"></a>Example 3: Plot the N and P input into farms for NC and SC from 1945 to 2010</h2>
+<div id="example-3-plot-the-n-and-p-input-into-farms-for-nc-and-sc-from-1945-to-2010" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-3-plot-the-n-and-p-input-into-farms-for-nc-and-sc-from-1945-to-2010" class="anchor"></a>Example 3: Plot the N and P input into farms for NC and SC from 1945 to 2010</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">year_plot =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1945</span>, <span class="dv">2010</span>, <span class="dv">1</span>)
 states =<span class="st"> </span><span class="kw">c</span>(<span class="st">"NC"</span>,<span class="st">"SC"</span>)
 
 us_fertilizer_county <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">filter</span>(State <span class="op">%in%</span><span class="st"> </span>states <span class="op">&amp;</span><span class="st"> </span>Year <span class="op">%in%</span><span class="st"> </span>year_plot <span class="op">&amp;</span>
-<span class="st">           </span>Farm.Type <span class="op">==</span><span class="st"> "farm"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(State, Year, Fertilizer) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Quantity =</span> <span class="kw">sum</span>(Quantity)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">           </span>Farm.Type <span class="op">==</span><span class="st"> "farm"</span> <span class="op">&amp;</span><span class="st"> </span>Input.Type <span class="op">==</span><span class="st"> "Fertilizer"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(State, Year, Nutrient) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Quantity =</span> <span class="kw">sum</span>(Quantity, <span class="dt">na.rm =</span> T)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.numeric</span>(Year), <span class="dt">y =</span> Quantity, <span class="dt">color=</span>State)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>()<span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">"Year"</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">"Nutrient input quantity (kg)"</span>)<span class="op">+</span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Fertilizer, <span class="dt">scales =</span> <span class="st">"free"</span>, <span class="dt">ncol =</span> <span class="dv">2</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Nutrient, <span class="dt">scales =</span> <span class="st">"free"</span>, <span class="dt">ncol =</span> <span class="dv">2</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Estimated nutrient inputs into arable lands by commercial fertilizer</span><span class="ch">\n</span><span class="st">from 1945 to 2010 in Carolinas"</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_bw</span>()</code></pre></div>
 <p><img src="readme_files/figure-markdown_github/unnamed-chunk-7-1.png"></p>
 </div>
+<div id="example-4-plot-the-n-input-into-farms-from-fertilizer-and-manure-for-nc-and-sc-from-1945-to-2012" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-4-plot-the-n-input-into-farms-from-fertilizer-and-manure-for-nc-and-sc-from-1945-to-2012" class="anchor"></a>Example 4: Plot the N input into farms from fertilizer and manure for NC and SC from 1945 to 2012</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">us_fertilizer_county <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(State <span class="op">%in%</span><span class="st"> </span>states <span class="op">&amp;</span><span class="st"> </span>Year <span class="op">%in%</span><span class="st"> </span>year_plot <span class="op">&amp;</span>
+<span class="st">           </span>Farm.Type <span class="op">==</span><span class="st"> "farm"</span> <span class="op">&amp;</span><span class="st"> </span>Nutrient <span class="op">==</span><span class="st"> "N"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(State, Year, Input.Type) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Quantity =</span> <span class="kw">sum</span>(Quantity, <span class="dt">na.rm =</span> T)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.numeric</span>(Year), <span class="dt">y =</span> Quantity, <span class="dt">color=</span>Input.Type)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>()<span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">"Year"</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">"Nutrient input quantity (kg)"</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>State, <span class="dt">scales =</span> <span class="st">"free"</span>, <span class="dt">ncol =</span> <span class="dv">2</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">"Estimated nutrient inputs into arable lands by commercial fertilizer and manure</span><span class="ch">\n</span><span class="st">from 1945 to 2012 in Carolinas"</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>()</code></pre></div>
+<p><img src="readme_files/figure-markdown_github/unnamed-chunk-8-1.png"></p>
 </div>
-<div id="comments-and-questions-" class="section level1">
-<h1 class="hasAnchor">
-<a href="#comments-and-questions-" class="anchor"></a>Comments and Questions.</h1>
+</div>
+<div id="comments-and-questions-" class="section level2">
+<h2 class="hasAnchor">
+<a href="#comments-and-questions-" class="anchor"></a>Comments and Questions.</h2>
 <p>If you have any problems or questions, feel free to open an issue <a href="https://github.com/wenlong-liu/usfertilizer/issues">here</a>.</p>
 </div>
-<div id="lisence" class="section level1">
-<h1 class="hasAnchor">
-<a href="#lisence" class="anchor"></a>Lisence</h1>
-<p>GPL</p>
+<div id="lisence" class="section level2">
+<h2 class="hasAnchor">
+<a href="#lisence" class="anchor"></a>Lisence</h2>
+<p><a href="https://github.com/wenlong-liu/usfertilizer/blob/master//lisence.txt">GPL</a></p>
 </div>
-
+<div id="code-of-conduct" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code-of-conduct" class="anchor"></a>Code of conduct</h2>
+<p>Please note that this project is released with a <a href="https://github.com/wenlong-liu/usfertilizer/blob/master//CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+</div>
+</div>
 
   </div>
 
@@ -241,6 +279,8 @@ us_fertilizer_county <span class="op">%&gt;%</span><span class="st"> </span>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

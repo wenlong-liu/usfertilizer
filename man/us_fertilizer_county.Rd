@@ -15,8 +15,9 @@
   \item{INTPTLONG}{The longitude of centriod in each county, e.g. -86.64449}
   \item{Quantity}{The quantity of fertilizeation as N or P, e.g. kg N or kg P}
   \item{Year}{The year of estimated data, e.g. 1994}
-  \item{Fertilizer}{The fertilizer type, e.g. N or P}
+  \item{Nutrient}{The fertilizer type, e.g. N or P}
   \item{Farm.Type}{The land use type of fertilizer, e.g. farm and nonfarm}
+  \item{Input.Type}{The input type of nutrient, e.g. Fertilizer or Manure}
   ...
 }}
 \usage{
@@ -24,7 +25,7 @@ us_fertilizer_county
 }
 \description{
 This is data adapted from the county-level estimates of fertilizer nitrogen and phosphorus based on
-commacial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
+commercial sales from 1945 to 2012.  Please visit [here](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238)
 for more details.
 }
 \examples{

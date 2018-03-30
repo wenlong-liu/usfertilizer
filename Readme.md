@@ -2,7 +2,7 @@ usfertilizer
 ================
 
 <!--[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)-->
-[![Travis-CI Build Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)]((https://travis-ci.org/wenlong-liu/usfertilizer)) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer) <!--[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
+[![Travis-CI Build Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)](https://travis-ci.org/wenlong-liu/usfertilizer) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer) <!--[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
 [![metacran downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)-->
 
 County-lelel nutrients data from 1945 to 2012
@@ -41,12 +41,12 @@ data("us_fertilizer_county")
 
 ### Summary of the dataset
 
-The dataset, named by us\_fertilizer\_county, contains 582012 observations and 11 variables. Details are available by using `?us_fertilizer_county`.
+The dataset, named by us\_fertilizer\_county, contains 625580 observations and 11 variables. Details are available by using `?us_fertilizer_county`.
 
 ``` r
 glimpse(us_fertilizer_county)
-#> Observations: 582,012
-#> Variables: 11
+#> Observations: 625,580
+#> Variables: 12
 #> $ FIPS       <chr> "01001", "01003", "01005", "01007", "01009", "01011...
 #> $ State      <chr> "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL...
 #> $ County     <chr> "Autauga", "Baldwin", "Barbour", "Bibb", "Blount", ...
@@ -56,8 +56,9 @@ glimpse(us_fertilizer_county)
 #> $ INTPTLONG  <dbl> -86.64449, -87.74607, -85.40546, -87.12715, -86.567...
 #> $ Quantity   <dbl> 1580225, 6524369, 2412372, 304592, 1825118, 767573,...
 #> $ Year       <chr> "1987", "1987", "1987", "1987", "1987", "1987", "19...
-#> $ Fertilizer <chr> "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "...
+#> $ Nutrient   <chr> "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "...
 #> $ Farm.Type  <chr> "farm", "farm", "farm", "farm", "farm", "farm", "fa...
+#> $ Input.Type <chr> "Fertilizer", "Fertilizer", "Fertilizer", "Fertiliz...
 ```
 
 Examples
@@ -70,7 +71,7 @@ Examples
 # Reorder to make the plot more cleanner.
 year_plot = 2008
 us_fertilizer_county %>%
-  filter(Fertilizer == "N" & Year == year_plot) %>%
+  filter(Nutrient == "N" & Year == year_plot & Input.Type == "Fertilizer" ) %>%
   top_n(10, Quantity) %>%
   ggplot(aes(x=reorder(paste(County,State, sep = ","), Quantity), Quantity, fill = Quantity))+
   scale_fill_gradient(low = "blue", high = "darkblue")+
@@ -91,7 +92,7 @@ us_fertilizer_county %>%
 # Reorder to make the plot more cleanner.
 year_plot = 1980
 us_fertilizer_county %>%
-  filter(Fertilizer == "P" & Year == 1980) %>% 
+  filter(Nutrient == "P" & Year == 1980 & Input.Type == "Fertilizer") %>% 
   group_by(State) %>% 
   summarise(p_application = sum(Quantity)) %>% 
   as.data.frame() %>% 
@@ -100,7 +101,7 @@ us_fertilizer_county %>%
   scale_fill_gradient(low = "blue", high = "darkblue")+
   geom_col()+
   ggtitle(paste("Top 10 States with most Phosphrus application in the year of", year_plot)) + 
-  scale_y_continuous(name = "Phosphrus from commecial fertilization (kg)")+
+  scale_y_continuous(name = "Phosphrus from commecial fertilizer (kg)")+
   scale_x_discrete(name = "States")+
   theme_bw()+
   coord_flip()
@@ -116,20 +117,40 @@ states = c("NC","SC")
 
 us_fertilizer_county %>% 
   filter(State %in% states & Year %in% year_plot &
-           Farm.Type == "farm") %>% 
-  group_by(State, Year, Fertilizer) %>% 
+           Farm.Type == "farm" & Input.Type == "Fertilizer") %>% 
+  group_by(State, Year, Nutrient) %>% 
   summarise(Quantity = sum(Quantity, na.rm = T)) %>% 
   ggplot(aes(x = as.numeric(Year), y = Quantity, color=State)) +
   geom_point() +
   geom_line()+
   scale_x_continuous(name = "Year")+
   scale_y_continuous(name = "Nutrient input quantity (kg)")+
-  facet_wrap(~Fertilizer, scales = "free", ncol = 2)+
+  facet_wrap(~Nutrient, scales = "free", ncol = 2)+
   ggtitle("Estimated nutrient inputs into arable lands by commercial fertilizer\nfrom 1945 to 2010 in Carolinas")+
   theme_bw()
 ```
 
 ![](readme_files/figure-markdown_github/unnamed-chunk-7-1.png)
+
+### Example 4: Plot the N input into farms from fertilizer and manure for NC and SC from 1945 to 2012
+
+``` r
+us_fertilizer_county %>% 
+  filter(State %in% states & Year %in% year_plot &
+           Farm.Type == "farm" & Nutrient == "N") %>% 
+  group_by(State, Year, Input.Type) %>% 
+  summarise(Quantity = sum(Quantity, na.rm = T)) %>% 
+  ggplot(aes(x = as.numeric(Year), y = Quantity, color=Input.Type)) +
+  geom_point() +
+  geom_line()+
+  scale_x_continuous(name = "Year")+
+  scale_y_continuous(name = "Nutrient input quantity (kg)")+
+  facet_wrap(~State, scales = "free", ncol = 2)+
+  ggtitle("Estimated nutrient inputs into arable lands by commercial fertilizer and manure\nfrom 1945 to 2012 in Carolinas")+
+  theme_bw()
+```
+
+![](readme_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
 Comments and Questions.
 -----------------------
@@ -139,9 +160,9 @@ If you have any problems or questions, feel free to open an issue [here](https:/
 Lisence
 -------
 
-[GPL](https://github.com/wenlong-liu/usfertilizer/lisence.txt)
+[GPL](https://github.com/wenlong-liu/usfertilizer/blob/master//lisence.txt)
 
 Code of conduct
 ---------------
 
-Please note that this project is released with a [Contributor Code of Conduct](https://github.com/wenlong-liu/usfertilizer/CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/wenlong-liu/usfertilizer/blob/master//CONDUCT.md). By participating in this project you agree to abide by its terms.

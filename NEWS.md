@@ -18,3 +18,11 @@
 * Added a license file and code of conduct.
 * Enable website for project using pkgdown.
 
+# usfertilizer 0.1.4
+
+* Added manure data from 1982 to 2012 (every five years).
+* Update the column names: Fertilizer -> Nutrient.
+* Added another column: Input.Type to indicate the nutrient input type.
+* Update readme and related articles.
+* Fixed the failed build of vignettes.
+
