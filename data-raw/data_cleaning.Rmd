@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
 
 # county level data of fertilizer application.  
-#Source: https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
+# Source: https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
 raw_data = read_csv("CNTY_FERT_1987-2012.csv")
 #summary(raw_data)
 
@@ -94,10 +94,65 @@ clean_data = county_summary %>%
   select(-Fert.Type)
 
 # add data from 1945. 
-clean_data = rbind(clean_data, cnty_summary_1985)
-# save cleaned data into .rda format.
-save(clean_data, file = "../data/usfertilizer_county.rda")
+clean_data = rbind(clean_data, cnty_summary_1985) %>% 
+  rename(Nutrient = Fertilizer) %>% # renam Fertilizer to nutrient.
+  mutate(Input.Type = rep("Fertilizer")) # add a colume as fertilizer, compared with Manure.
+  
+
 ```
+
+### Clean manure data before 1997
+
+```{r}
+# read in manure data from 1982 to 1997.
+cnty_manure_97 = read_csv("cnty_manure_82-97.csv")
+head(cnty_manure_97)
+cnty_manure_summary = cnty_manure_97 %>% 
+  select(-c(State, County)) %>% 
+  gather(dummy, Quantity, N_1982:P_1997) %>%   # dummy is a temporay column.
+  mutate(Farm.Type = rep("farm", length(.$FIPS)),
+         Input.Type = rep("Manure", length(.$FIPS))) %>% 
+  separate(dummy, c("Nutrient", "Year"), sep = "_")
+
+head(cnty_manure_summary)
+```
+
+### Clean manure data after 1997
+```{r}
+# read in manure data.
+cnty_manure_02 = read_csv("cnty_manure_2002.csv")
+cnty_manure_07 = read_csv("cnty_manure_2007.csv")
+cnty_manure_12 = read_csv("cnty_manure_2012.csv")
+
+cnty_manure_02_12 = rbind(cnty_manure_02, cnty_manure_07, cnty_manure_12) %>% 
+  select(-c(State, County)) %>% 
+  gather(Nutrient, Quantity, N:P) %>% 
+  mutate(Farm.Type = rep("farm", length(.$FIPS)),
+         Input.Type = rep("Manure", length(.$FIPS)))
+head(cnty_manure_02_12)
+```
+
+### Merge manure data and fertilizer data.
+
+```{r}
+# connect manure data.
+cnty_manure_summary = rbind(cnty_manure_summary,cnty_manure_02_12)
+
+cnty_manure_all = county_summary %>% 
+  select(FIPS,State, County, ALAND, AWATER, INTPTLAT, INTPTLONG) %>% 
+  right_join(cnty_manure_summary, by = "FIPS") 
+
+clean_data = rbind(clean_data, cnty_manure_all)
+
+
+
+# save cleaned data into .rda format.
+# not run.
+if (FALSE){
+save(clean_data, file = "../data/usfertilizer_county.rda")
+  }
+```
+
 
 ## Data visualization
 
@@ -106,7 +161,7 @@ save(clean_data, file = "../data/usfertilizer_county.rda")
 # Reorder to make the plot more cleanner.
 year_plot = 2008
 clean_data %>%
-  filter(Fertilizer == "N" & Year == year_plot) %>%
+  filter(Nutrient == "N" & Year == year_plot) %>%
   top_n(10, Quantity) %>%
   ggplot(aes(x=reorder(paste(County,State, sep = ","), Quantity), Quantity))+
   geom_col()+
@@ -118,9 +173,25 @@ clean_data %>%
 # plot the P application for each county in the year of 2008.
 clean_data %>%
   
-filter(State == "OH" & Fertilizer == "P" & Year == 2008) %>%
+filter(State == "OH" & Nutrient == "P" & Year == 2002 & Input.Type == "Manure") %>%
 ggplot()+
   geom_point(aes(x=INTPTLONG, y = INTPTLAT, color = Quantity))+
+  scale_color_gradient(low = "blue", high = 'red')
   coord_fixed(1.3)
+```
+
+```{r}
+clean_data %>% 
+  filter(State == "OH" & Nutrient == "N" ) %>% 
+  group_by(Year, Input.Type) %>% 
+  summarise(N_App = sum(Quantity, na.rm = T)) %>% 
+  ggplot(aes(x = as.numeric(Year), y = N_App, color = Input.Type)) +
+  geom_point()+
+  geom_line()+
+  scale_x_continuous(name = "Year")+
+  scale_y_continuous(name = "Nitrogen application (kg N/year)")+
+  scale_color_discrete(name = NULL)+
+  theme_bw()
+  
 ```
 

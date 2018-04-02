@@ -2,12 +2,12 @@ require(tidyverse)
 
 # county level data of fertilizer application.
 #Source: https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238
-raw_data = read_csv("data-raw/CNTY_FERT_1987-2012.csv")
+raw_data = read_csv("./data-raw/CNTY_FERT_1987-2012.csv")
 #summary(raw_data)
 
 # County summary from US census bureau.
 # Source: https://www.census.gov/geo/maps-data/data/gazetteer2010.html
-county_raw = read.table("data-raw/Gaz_counties_national.txt", sep = "\t", header=TRUE)
+county_raw = read.table("./data-raw/Gaz_counties_national.txt", sep = "\t", header=TRUE)
 # remove duplicates in county data.
 county_data = county_raw %>%
   distinct(GEOID, .keep_all = TRUE) %>%
@@ -19,13 +19,14 @@ county_data = county_raw %>%
 # combine county data with county level fertilizer data.
 county_summary = left_join(raw_data,county_data, by = "FIPSno")
 
+##################################
 # data cleanning
 ## cleaning the fertilizer data from 1945 to 1985
 # read in data, extracted from coverage in ArcGIS.
-n45_64 <- read.table("data-raw/cty_fert0.n45-64.txt", sep = ",", header = T)
-n65_85 <- read.table("data-raw/cty_fert0.n65-85.txt", sep = ",", header = T)
-p45_64 <- read.table("data-raw/cty_fert0.p45-64.txt", sep = ",", header = T)
-p65_85 <- read.table("data-raw/cty_fert0.p65-85.txt", sep = ",", header = T)
+n45_64 <- read.table("./data-raw/cty_fert0.n45-64.txt", sep = ",", header = T)
+n65_85 <- read.table("./data-raw/cty_fert0.n65-85.txt", sep = ",", header = T)
+p45_64 <- read.table("./data-raw/cty_fert0.p45-64.txt", sep = ",", header = T)
+p65_85 <- read.table("./data-raw/cty_fert0.p65-85.txt", sep = ",", header = T)
 # merge nitrogen and P data together.
 n45_85 = inner_join(n45_64, n65_85, by = c("FIPS","STATE","Rowid_"))
 p45_85 = inner_join(p45_64, p65_85, by = c("FIPS","STATE","Rowid_"))
@@ -76,8 +77,53 @@ us_fertilizer_county = county_summary %>%
   # remove Fert.Type
   select(-Fert.Type)
 
+
+#########################
+# read in manure data from 1982 to 1997.
+# Source: https://pubs.usgs.gov/sir/2006/5012/
+
+cnty_manure_97 = read_csv("./data-raw/cnty_manure_82-97.csv")
+head(cnty_manure_97)
+cnty_manure_summary = cnty_manure_97 %>%
+  select(-c(State, County)) %>%
+  gather(dummy, Quantity, N_1982:P_1997) %>%   # dummy is a temporay column.
+  mutate(Farm.Type = rep("farm", length(.$FIPS)),
+         Input.Type = rep("Manure", length(.$FIPS))) %>%
+  separate(dummy, c("Nutrient", "Year"), sep = "_")
+
+##########################
+
+# read in manure data.
+# Source1: https://pubs.usgs.gov/of/2013/1065/
+# Source2: https://www.sciencebase.gov/catalog/item/581ced4ee4b08da350d52303
+
+cnty_manure_02 = read_csv("./data-raw/cnty_manure_2002.csv")
+cnty_manure_07 = read_csv("./data-raw/cnty_manure_2007.csv")
+cnty_manure_12 = read_csv("./data-raw/cnty_manure_2012.csv")
+
+cnty_manure_02_12 = rbind(cnty_manure_02, cnty_manure_07, cnty_manure_12) %>%
+  select(-c(State, County)) %>%
+  gather(Nutrient, Quantity, N:P) %>%
+  mutate(Farm.Type = rep("farm", length(.$FIPS)),
+         Input.Type = rep("Manure", length(.$FIPS)))
+
+##########################
+
 # add data from 1945.
-us_fertilizer_county = rbind(us_fertilizer_county, cnty_summary_1985)
-devtools::use_data(us_fertilizer_county, compress = "xz")
+# change the colume names
+us_fertilizer_county = rbind(us_fertilizer_county, cnty_summary_1985) %>%
+  rename(Nutrient = Fertilizer) %>% # renam Fertilizer to nutrient.
+  mutate(Input.Type = rep("Fertilizer")) # add a colume as fertilizer, compared with Manure.
+
+# connect manure data.
+cnty_manure_summary = rbind(cnty_manure_summary,cnty_manure_02_12)
+
+cnty_manure_all = county_summary %>%
+  select(FIPS,State, County, ALAND, AWATER, INTPTLAT, INTPTLONG) %>%
+  right_join(cnty_manure_summary, by = "FIPS")
+
+us_fertilizer_county = rbind(us_fertilizer_county, cnty_manure_all)
+
+devtools::use_data(us_fertilizer_county, compress = "xz", overwrite = TRUE)
 
 rm(list = ls(all=TRUE))
