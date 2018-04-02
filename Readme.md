@@ -139,9 +139,9 @@ If you have any problems or questions, feel free to open an issue [here](https:/
 Lisence
 -------
 
-[GPL](https://github.com/wenlong-liu/usfertilizer/lisence.txt)
+[GPL](https://github.com/wenlong-liu/usfertilizer/blob/master/lisence.txt)
 
 Code of conduct
 ---------------
 
-Please note that this project is released with a [Contributor Code of Conduct](https://github.com/wenlong-liu/usfertilizer/CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/wenlong-liu/usfertilizer/blob/master/CONDUCT.md). By participating in this project you agree to abide by its terms.
