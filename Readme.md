@@ -1,19 +1,24 @@
 usfertilizer
 ================
 
-<!--[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)-->
-[![Travis-CI Build Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)](https://travis-ci.org/wenlong-liu/usfertilizer) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer) <!--[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
-[![metacran downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)-->
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
+[![Travis-CI Build
+Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)](https://travis-ci.org/wenlong-liu/usfertilizer)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer)
+[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
+[![metacran
+downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)
 
-County-lelel nutrients data from 1945 to 2012
----------------------------------------------
+## County-lelel nutrients data from 1945 to 2012 in USA
 
-Usfertilizer summarized the estimated county level data from USGS and provided a clean version using Tidyverse.
+Usfertilizer summarized the estimated county level data from USGS of USA
+and provided a clean version using Tidyverse.
 
-Please note that USGS does not endorse this package and this package does not include manure data. Also data from 1986 is not available for now.
+Please note that USGS does not endorse this package. Also data from 1986
+is not available for now.
 
-Installation
-------------
+## Installation
 
 Install the stable version via CRAN, just run:
 
@@ -28,8 +33,7 @@ You can also install the package via my Github Repository.
 devtools::install_github("wenlong-liu/usfertilizer")
 ```
 
-Get started
------------
+## Get started
 
 ### Import data and related libraries
 
@@ -41,7 +45,9 @@ data("us_fertilizer_county")
 
 ### Summary of the dataset
 
-The dataset, named by us\_fertilizer\_county, contains 625580 observations and 11 variables. Details are available by using `?us_fertilizer_county`.
+The dataset, named by us\_fertilizer\_county, contains 625580
+observations and 11 variables. Details are available by using
+`?us_fertilizer_county`.
 
 ``` r
 glimpse(us_fertilizer_county)
@@ -61,8 +67,7 @@ glimpse(us_fertilizer_county)
 #> $ Input.Type <chr> "Fertilizer", "Fertilizer", "Fertilizer", "Fertiliz...
 ```
 
-Examples
---------
+## Examples
 
 ### Example 1: Find out the top 10 counties with most nitrogen appliation in 2008.
 
@@ -83,7 +88,7 @@ us_fertilizer_county %>%
   theme_bw()
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](readme_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ### Example 2: Find out the top 10 states with most nitrogen appliation in 1980.
 
@@ -107,7 +112,7 @@ us_fertilizer_county %>%
   coord_flip()
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](readme_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ### Example 3: Plot the N and P input into farms for NC and SC from 1945 to 2010
 
@@ -130,7 +135,7 @@ us_fertilizer_county %>%
   theme_bw()
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](readme_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ### Example 4: Plot the N input into farms from fertilizer and manure for NC and SC from 1945 to 2012
 
@@ -150,19 +155,19 @@ us_fertilizer_county %>%
   theme_bw()
 ```
 
-![](readme_files/figure-markdown_github/unnamed-chunk-8-1.png)
+![](readme_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-Comments and Questions.
------------------------
+## Comments and Questions.
 
-If you have any problems or questions, feel free to open an issue [here](https://github.com/wenlong-liu/usfertilizer/issues).
+If you have any problems or questions, feel free to open an issue
+[here](https://github.com/wenlong-liu/usfertilizer/issues).
 
-Lisence
--------
+## Lisence
 
-[GPL](https://github.com/wenlong-liu/usfertilizer/blob/master//lisence.txt)
+[GPL](https://github.com/wenlong-liu/usfertilizer/blob/master/lisence.txt)
 
-Code of conduct
----------------
+## Code of conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](https://github.com/wenlong-liu/usfertilizer/blob/master//CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](https://github.com/wenlong-liu/usfertilizer/blob/master/CONDUCT.md).
+By participating in this project you agree to abide by its terms.

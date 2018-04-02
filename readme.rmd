@@ -10,17 +10,17 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-<!--[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)-->
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
 [![Travis-CI Build Status](https://travis-ci.org/wenlong-liu/usfertilizer.svg?branch=master)](https://travis-ci.org/wenlong-liu/usfertilizer)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertilizer?branch=master&svg=true)](https://ci.appveyor.com/project/wenlong-liu/usfertilizer)
-<!--[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
-[![metacran downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)-->
+[![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
+[![metacran downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)
 
 
-## County-lelel nutrients data from 1945 to 2012
-Usfertilizer summarized the estimated county level data from USGS and provided a clean version using Tidyverse. 
+## County-lelel nutrients data from 1945 to 2012 in USA
+Usfertilizer summarized the estimated county level data from USGS of USA and provided a clean version using Tidyverse. 
 
-Please note that USGS does not endorse this package and this package does not include manure data. Also data from 1986 is not available for now.
+Please note that USGS does not endorse this package. Also data from 1986 is not available for now.
 
 ## Installation
 Install the stable version via CRAN, just run:

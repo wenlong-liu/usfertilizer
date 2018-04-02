@@ -26,3 +26,9 @@
 * Update readme and related articles.
 * Fixed the failed build of vignettes.
 
+# usfertilizer 0.1.5
+
+* Specify that the dataset were about United States of America (USA).
+* Update the titles of vignette.
+* Removed the documention about installing the package via Github.
+
