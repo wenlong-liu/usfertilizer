@@ -1,0 +1,28 @@
+
+title: County-lelel nutrients data from 1945 to 2012 in USA
+url: https://wenlong-liu.github.io/usfertilizer/
+template:
+  params:
+    bootswatch: yeti
+
+navbar:
+  type: inverse
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Getting Started"
+      href: articles/Introduction.html
+    - text: "Data sources"
+      href: articles/Data_sources_and_cleaning.html
+    - text: "Dataset description"
+      href: reference/us_fertilizer_county.html
+
+  right:
+    - text: News
+      href: news/index.html
+    - icon: fa-github fa-lg
+      text: "Github"
+      href: https://github.com/wenlong-liu/usfertilizer
+    - icon: fa-twitter fa-lg
+      text: "Twitter"
+      href: https://twitter.com/tianya0423

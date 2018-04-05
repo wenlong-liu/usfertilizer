@@ -1,0 +1,4 @@
+https://wenlong-liu.github.io/usfertilizer//reference/usfertilizer.html
+https://wenlong-liu.github.io/usfertilizer//reference/us_fertilizer_county.html
+https://wenlong-liu.github.io/usfertilizer//articles/Data_sources_and_cleaning.html
+https://wenlong-liu.github.io/usfertilizer//articles/Introduction.html
