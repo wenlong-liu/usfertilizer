@@ -3,7 +3,7 @@ title: County-lelel nutrients data from 1945 to 2012 in USA
 url: https://wenlong-liu.github.io/usfertilizer/
 template:
   params:
-    bootswatch: yeti
+    bootswatch: journal
 
 navbar:
   type: inverse
