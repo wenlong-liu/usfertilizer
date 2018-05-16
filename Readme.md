@@ -1,5 +1,5 @@
-usfertilizer
-================
+
+# usfertilizer <img src="https://raw.githubusercontent.com/wenlong-liu/usfertilizer_sticker/master/usfertilizer.png" align="right" height = "120"/>
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
 [![Travis-CI Build
