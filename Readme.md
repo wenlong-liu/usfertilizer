@@ -9,6 +9,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/wenlong-liu/usfertili
 [![](https://cranlogs.r-pkg.org/badges/usfertilizer)](https://cran.r-project.org/package=usfertilizer)
 [![metacran
 downloads](http://cranlogs.r-pkg.org/badges/grand-total/usfertilizer?color=ff69b4)](https://cran.r-project.org/package=usfertilizer)
+[![DOI](https://zenodo.org/badge/123758879.svg)](https://zenodo.org/badge/latestdoi/123758879)
 
 ## County-lelel nutrients data from 1945 to 2012 in USA
 
