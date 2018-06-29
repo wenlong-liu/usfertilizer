@@ -19,6 +19,30 @@ and provided a clean version using Tidyverse.
 Please note that USGS does not endorse this package. Also data from 1986
 is not available for now.
 
+## Introduction of data sources and availability
+
+The data used in this package were original compiled and processed by
+United States Geographic Services (USGS). The fertilizer data include
+the application in both farms and non-farms for 1945 through 2012. The
+folks in USGS utilized the sales data of commercial fertilizer each
+state or county from the Association of American Plant Food Control
+Officials (AAPFCO) commercial fertilizer sales data. State estimates
+were then allocated to the county-level using fertilizer expenditure
+from the Census of Agriculture as county weights for farm fertilizer,
+and effective population density as county weights for nonfarm
+fertilizer. The data sources and other further information are availalbe
+in Table
+below.
+
+| Dataset name                 | Temporal coverage |  Source   | Website                                                                   | Comments                                      |
+| ---------------------------- | :---------------: | :-------: | ------------------------------------------------------------------------- | :-------------------------------------------- |
+| Fertilizer data before 1985  |    1945 - 1985    |   USGS    | [Link](https://pubs.er.usgs.gov/publication/ofr90130)                     | Only has farm data.                           |
+| Fertilizer data after 1986   |    1986 - 2012    |   USGS    | [Link](https://www.sciencebase.gov/catalog/item/5851b2d1e4b0f99207c4f238) | Published in 2017.                            |
+| County background data       |       2010        | US Census | [Link](https://www.census.gov/geo/maps-data/data/gazetteer2010.html)      | Assume descriptors of counties do not change. |
+| Manure data before 1997      |    1982 - 1997    |   USGS    | [Link](https://pubs.usgs.gov/sir/2006/5012/)                              | Manual data into farm every five years        |
+| Manure data in 2002          |       2002        |   USGS    | [Link](https://pubs.usgs.gov/of/2013/1065/)                               | Published in 2013                             |
+| Manure data in 2007 and 2012 |    2007 & 2012    |   USGS    | [Link](https://www.sciencebase.gov/catalog/item/581ced4ee4b08da350d52303) | Published in 2017                             |
+
 ## Installation
 
 Install the stable version via CRAN, just run:
@@ -172,3 +196,10 @@ If you have any problems or questions, feel free to open an issue
 Please note that this project is released with a [Contributor Code of
 Conduct](https://github.com/wenlong-liu/usfertilizer/blob/master/CONDUCT.md).
 By participating in this project you agree to abide by its terms.
+
+## Preferred citation
+
+Wenlong Liu (2018). usfertilizer: County-Level Estimates of Fertilizer
+Application in USA. R package version 0.1.5.
+<https://CRAN.R-project.org/package=usfertilizer>.
+<DOI:10.5281/zenodo.1292843>
